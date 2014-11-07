@@ -1,0 +1,933 @@
+/* =====================================
+ * FONTS 
+ * ===================================== */
+ @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
+ 
+
+/* custom styles */
+
+body {
+	background-color: #fafafa;
+	font-family: 'Open Sans Condensed', sans-serif;
+	padding-top: 64px;
+}
+
+.content-overlay {
+	position: fixed;
+	top:0;
+	left: 0;
+	background: rgb(255,255,255);
+	opacity: 0.4;
+	width: 100%;
+	height: 100%;
+	z-index: 99998;
+	-webkit-transition-duration: 0.5s;
+	-moz-transition-duration: 0.5s;
+	-ms-transition-duration: 0.5s;
+	-o-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+	
+	&.close {
+		visibility: hidden;
+		opacity: 0;
+		-webkit-transition-duration: 0.5s;
+		-moz-transition-duration: 0.5s;
+		-ms-transition-duration: 0.5s;
+		-o-transition-duration: 0.5s;
+		transition-duration: 0.5s;		
+	}
+	&.open {
+		visibility: visible;
+		opacity: 0.4;
+		-webkit-transition-duration: 0.5s;
+		-moz-transition-duration: 0.5s;
+		-ms-transition-duration: 0.5s;
+		-o-transition-duration: 0.5s;
+		transition-duration: 0.5s;	
+	}
+}
+
+.menu {
+	color: rgb(51,51,51);
+	position: fixed;
+	top: 0;
+	right: 0;
+	background: rgb(245,245,245);
+	padding: 24px 30px 115px 20px;
+	box-shadow: 0px 0px 1px 0px #fff;
+	height: 100%;
+	width: 320px;
+	max-width: 100%;
+	z-index: 99999;
+	
+	-webkit-transform-style: flat;
+	-moz-transform-style: flat;
+	-ms-transform-style: flat;
+	-o-transform-style: flat;
+	transform-style: flat;
+	-webkit-transition-property: -webkit-transform;
+	-moz-transition-property: -moz-transform;
+	-ms-transition-property: -ms-transform;
+	-o-transition-property: -o-transform;
+	transition-property: transform;
+	-webkit-transition-duration: 0.5s;
+	-moz-transition-duration: 0.5s;
+	-ms-transition-duration: 0.5s;
+	-o-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+	-webkit-transform-origin: 100% 0;
+	-moz-transform-origin: 100% 0;
+	-ms-transform-origin: 100% 0;
+	-o-transform-origin: 100% 0;
+	transform-origin: 100% 0;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	
+	a {
+		color: rgb(51,51,51);
+	}
+	
+	h2 {
+		margin: 38px 0 15px 10px;
+		padding: 0 0 10px;
+		width: 180px;
+		font-size: 24px;
+		letter-spacing: 0.03em;
+		text-transform: uppercase;
+		color: rgb(51,51,51);
+		border-bottom: 2px solid rgb(51,51,51);
+	}
+	
+	ul {
+		padding: 0;
+		margin: 0 0 0 10px;
+		li {
+			list-style: none;
+			margin: 0 0 8px;
+			font-size: 18px;
+		}
+	}
+	
+	&.close {
+		-webkit-transform: translateX(425px);
+		-moz-transform: translateX(425px);
+		-ms-transform: translateX(425px);
+		-o-transform: translateX(425px);
+		transform: translateX(425px);
+	}
+	&.open {
+		
+		-webkit-transform: translateX(0px);
+		-moz-transform: translateX(0px);
+		-ms-transform: translateX(0px);
+		-o-transform: translateX(0px);
+		transform: translateX(0px);
+	}
+	
+	.menu-close {
+		width: 1.5em;
+		height: 1.5em;
+		position: absolute;
+		left: 2.5em;
+		top: 1em;
+		overflow: hidden;
+		text-indent: 1em;
+		font-size: 0.75em;
+		border: none;
+		background: transparent;
+		color: transparent;
+		&:before, &:after {
+			content: '';
+			position: absolute;
+			width: 3px;
+			height: 100%;
+			top: 0;
+			left: 50%;
+			background: rgb(51,51,51);
+		}
+		&:before {
+			-webkit-transform: rotate(45deg);
+			transform: rotate(45deg);
+		}
+		&:after {
+			-webkit-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+		}
+	}
+}
+
+.navbar {
+	height: 78px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	background: rgb(255,255,255);
+	box-shadow: 0 4px 2px -2px rgba(0,0,0,0.1);
+	-webkit-transition: top 0.3s;
+	@media(max-width:767px) {
+		box-shadow: none;
+		.navbar-header {
+			height: 80px;
+			.navbar-toggle {
+				margin-top: 20px;
+				.icon-bar {
+					background-color: #222;
+					height: 3px;
+				}
+			}
+		}
+	}
+	
+	.container-fluid {
+		background: #fff;
+	}
+	.navbar-nav>li>a {
+		color: #333;
+		text-transform: uppercase;
+		font-weight: 800;
+		padding-top: 35px;
+		padding-bottom: 35px;
+	}
+	
+	&.navbar-hide {
+		top: -88px;
+	}
+	
+	.social {
+		padding-top: 15px;
+		margin-top: 1rem;
+		a {
+			font-size: 20px;
+			color: #333;
+			margin-right: 15px;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+	
+	.navbar-toggle {
+		display: block;
+		margin-top: 2rem;
+		
+		.icon-bar {
+			background: rgb(0,0,0);
+			height: 4px;
+			border-radius: 0;
+		}
+		
+		&:before {
+			content: 'MENU';
+			display: inline-block;
+			position: absolute;
+			left: -100%;
+			font-weight: bold;
+			font-size: 16px;
+			top: 8px;
+		}
+	}
+}
+
+.component {
+	li {
+		background-size: cover;
+		background-position: 50% 0%;
+		padding-top: 60px;
+		
+		@media (max-width: 767px) {
+			padding-top: 30px;
+		}
+		.slider-text {
+			color: rgb(255,255,255);
+			opacity: 0;
+			-webkit-transform: translate(26px, 0px);
+			-ms-transform: translate(26px, 0px);
+			-o-transform: translate(26px, 0px);
+			transform: translate(26px, 0px);
+			text-shadow: 0px 2px 3px rgba(0,0,0,0.5);
+			
+			.slider-copy {
+				font-size: 14px;
+				line-height: 1.2;
+			}
+			
+			h1 {
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: 0.02em;
+				border-bottom: 1px solid rgba(255,255,255,0.3);
+				padding-bottom: 1rem;
+			}
+			.slider-copy {
+				font-size: 30px;
+				line-height: 1.35;
+			}			
+			
+			@media (max-width: 767px) {
+				h1 {
+					font-size: 28px;
+				}
+				.slider-copy {
+					font-size: 24px;
+				}
+			}
+			
+			&.right-text-box {
+				width: 500px;
+				float: right;
+				margin-top: 70px;
+				margin-right: 12%;
+				
+				@media (max-width: 1100px) {
+					width: 400px;
+					margin-top: 20px;
+				}
+			}
+			
+			&.left-text-box {
+				width: 500px;
+				float: left;
+				margin-top: 70px;
+				margin-left: 12%;
+				
+				@media (max-width: 1100px) {
+					width: 400px;
+					margin-top: 20px;
+				}
+			}
+		}
+		
+		&.current {
+			.slider-text {
+				transition: opacity 1000ms, transform 1000ms;
+				-webkit-transition: opacity 1000ms, transform 1000ms;
+				opacity: 1;
+				transform: translateX(-26px) translateY(0px);
+			}
+		}
+	}
+}
+	
+.component-fullwidth nav a {
+	top: 35%;
+	z-index: 9999;
+	&.prev {
+		left: 10%;
+	}
+	&.next {
+		right: 4%;
+		left: inherit;
+	}
+}
+
+/* ========================================
+ * Page Headings
+ * ======================================== */
+
+.page-heading{
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center center;
+	margin-bottom: 6rem;
+	
+	.col-xs-12 {
+		padding: 15% 0;
+	}
+	h1 {
+		font-size: 48px;
+		@media(max-width: 480px) {
+			font-size: 28px;
+		}
+		
+		span {
+			color: #fff;
+			text-transform: uppercase;
+			font-weight: bold;
+			border: 7px solid #fff;
+			padding: 2rem;
+			letter-spacing: 0.05em;
+			background: rgba(0,0,0,0.1);
+		}
+	}
+}
+
+
+/* ========================================
+ *
+ * ======================================== */
+#events, .page-template-page-resources-php { 
+
+	.heading {
+		margin-top: 30px;
+		h1 > span {
+			border: 5px solid rgb(51,51,51);
+			padding: 0.5rem 1rem;
+			font-weight: 700;
+			text-transform: uppercase;
+			font-size: 3rem;
+		}
+		.mac-logo {
+			display: inline;
+			height: 100px;
+		}
+	}
+	.card.event-card {
+		overflow: hidden;
+		border: 1px solid rgb(228,228,228);
+		box-shadow: 0px 0px 25px -5px rgba(0,0,0,0.2);
+		margin: 2rem 1rem;
+		background: rgb(249,249,249);
+		opacity: 0;
+		
+		-webkit-transition: all 0.4s;
+			
+		.event-cover {
+			width: 100%;
+			display: block;
+			padding-top: 61.8%;
+			background-size: cover;
+			background-position: center center;
+		}
+		
+		.event-info {
+			padding: 1rem 2rem;
+			text-align: center;
+			
+			h1, h2 { font-weight: 700; }
+			h1 {
+				font-size: 1.3em;
+				letter-spacing: -0.02em;
+			}
+			h2 {
+				font-size: 14px;
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+				margin: 0;
+			}
+			h4 {
+				font-size: 1em;
+				letter-spacing: -0.01em;
+			}			
+		}
+		
+		.btn-rsvp {
+			display: block;
+			width: 50%;
+			margin: auto auto 2rem;
+			border-radius: 0;
+			background: rgb(255,255,255);
+			border: 1px solid rgb(34,34,34);
+			color: rgb(34,34,34);
+			font-weight: 700;
+			letter-spacing: 0.4rem;
+		
+			-webkit-transition: all 0.35s;
+		}
+		
+		&:hover {
+			background: rgb(34,34,34);
+			color: rgb(249,249,249);
+			
+			.btn-rsvp {
+				color: rgb(249,249,249);
+				background: rgb(34,34,34);
+				border: 1px solid rgb(249,249,249);
+				&:hover {
+					background: rgb(255,255,255);
+					border: 1px solid rgb(34,34,34);
+					color: rgb(34,34,34);
+				}
+			}
+		}
+	} 
+}	
+
+/* ========================================
+ * About Page
+ * ======================================== */
+#about, .page-template-page-our-mission-php {
+	h3, .h3 {
+		font-weight: 700;
+	}
+	
+	blockquote {
+		border-left: 0;
+		width: 90%;
+		margin-right: auto;
+		margin-left: auto;
+		text-align: center;
+		
+		p {
+			strong {
+				font-size: 24px;
+				line-height: 1.2;
+			}
+		}
+				
+		&:before, &:after {
+			display: block;
+			content: '';
+			border: 0;
+			border-top: 1px solid rgba(0,0,0,0.15);
+			width: 100px;
+			margin: 10px auto 30px auto;
+		}
+	}
+	
+	.row {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	
+	.wrap {
+		max-width: 800px;
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+		line-height: 1.5;
+		
+		p {
+			margin: 0 0 3rem;
+			font-family: Georgia,serif;
+			line-height: 1.8;
+			font-size: 18px;
+			color: #333;
+			letter-spacing: 0.01em;
+		}
+	}
+	
+	.bullets {
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+		font-size: 18px;
+		font-family: Georgia,serif;
+		line-height: 2;
+		margin-bottom: 4rem;
+		font-style: italic;
+	}
+}
+
+.footer {
+	padding: 3rem 0;
+	background: #f1f1f1;
+	margin-left: 0;
+	margin-right: 0;
+	
+	a {
+		color: #222;
+	}
+	
+	.f-container {
+		.content {
+			padding: 0 !important;
+			span {
+				font-weight: 700;
+				text-transform: uppercase;
+				font-size: 13px;
+				letter-spacing: 0.03em;
+			}
+			.social {
+				margin-top: 1.5rem;
+				a {
+					display: inline-block;
+					font-size: 24px;
+					margin: 0 2rem 0 0;
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+	}
+	.footer-navi {
+		padding: 0;
+		font-size: 24px;
+		font-weight: 700;
+		text-transform: uppercase;
+		
+		.content {
+			
+			 a {
+			 	display: inline-block;
+				font-size: 18px;
+				margin: 0 0.3rem;
+			}
+				
+			&:before, &:after {
+				display: block;
+				content: '';
+				border: 0;
+				margin: 40px auto;
+				border-top: 1px solid #bbb;
+				width: 200px;
+			}
+			&:before {
+				margin-top: 0;
+			}
+			&:after {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+/* ========================================
+ * About Page
+ * ======================================== */
+#membership, .page-template-page-membershp-php, .page-template-page-contact-php {
+	font-family: 'Open Sans Condensed', sans-serif;
+	.content {
+		padding: 8rem 0 0;
+		
+		.copy {
+			h1 > span {
+				border: 5px solid rgb(51,51,51);
+				padding: 0.5rem 1rem;
+				font-weight: 700;
+				text-transform: uppercase;
+			}	
+			.h3 {
+				letter-spacing: 0.02em;
+				line-height: 1.7;
+				margin-top: 4rem;
+			}		
+		}
+	}
+} 
+ 
+
+/*****************************************/
+/* Press away */
+/*****************************************/
+
+.fxPressAway .navOutNext {
+	-webkit-animation: slideOutScaleRight 1.2s forwards cubic-bezier(0.7, 0, 0.3, 1);
+	animation: slideOutScaleRight 1.2s forwards cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.fxPressAway .navInNext {
+	opacity: 1;
+	-webkit-animation: slideInFromLeft 1.2s forwards cubic-bezier(0.7, 0, 0.3, 1);
+	animation: slideInFromLeft 1.2s forwards cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.fxPressAway .navOutPrev {
+	-webkit-animation: slideOutScaleLeft 1.2s forwards cubic-bezier(0.7, 0, 0.3, 1);
+	animation: slideOutScaleLeft 1.2s forwards cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.fxPressAway .navInPrev {
+	opacity: 1;
+	-webkit-animation: slideInFromRight 1.2s forwards cubic-bezier(0.7, 0, 0.3, 1);
+	animation: slideInFromRight 1.2s forwards cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+@-webkit-keyframes slideOutScaleRight {
+	from {} /* Fixes Chrome issue 35.0.1916.114 (easing breaks) */
+	to {
+		-webkit-transform: translateX(100%) scale(0.9);
+		opacity: 0;
+	}
+}
+
+@keyframes slideOutScaleRight {
+	from {} /* Fixes Chrome issue 35.0.1916.114 (easing breaks) */
+	to {
+		-webkit-transform: translateX(100%) scale(0.9);
+		transform: translateX(100%) scale(0.9);
+		opacity: 0;
+	}
+}
+
+@-webkit-keyframes slideInFromLeft {
+	from {
+		-webkit-transform: translateX(-100%);
+	}
+	to {
+		-webkit-transform: translateX(0);
+	}
+}
+
+@keyframes slideInFromLeft {
+	from {
+		-webkit-transform: translateX(-100%);
+		transform: translateX(-100%);
+	}
+	to {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
+}
+
+@-webkit-keyframes slideOutScaleLeft {
+	from {} /* Fixes Chrome issue 35.0.1916.114 (easing breaks) */
+	to {
+		-webkit-transform: translateX(-100%) scale(0.9);
+		opacity: 0;
+	}
+}
+
+@keyframes slideOutScaleLeft {
+	from {} /* Fixes Chrome issue 35.0.1916.114 (easing breaks) */
+	to {
+		-webkit-transform: translateX(-100%) scale(0.9);
+		transform: translateX(-100%) scale(0.9);
+		opacity: 0;
+	}
+}
+
+@-webkit-keyframes slideInFromRight {
+	from {
+		-webkit-transform: translateX(100%);
+	}
+	to {
+		-webkit-transform: translateX(0);
+	}
+}
+
+@keyframes slideInFromRight {
+	from {
+		-webkit-transform: translateX(100%);
+		transform: translateX(100%);
+	}
+	to {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
+}
+
+
+
+/* ===========================================================
+ *
+ *  Name:          selectordie.css
+ *  Updated:       2014-04-27
+ *  Created by:    Per V @ Vst.mn
+ *  What?:         Base CSS for Select or Die
+ *
+ *  Copyright (c) 2014 Per Vestman
+ *  Dual licensed under the MIT and GPL licenses.
+ *
+ *  No, I don't usually comment my CSS, but in this
+ *  case it might "help" someone.
+ *
+ *  Beards, Rock & Loud Guns | Cogs 'n Kegs
+ * =========================================================== */
+
+/* Remove, change to fit your needs */
+@import url(http://fonts.googleapis.com/css?family=Lato:300,700);
+
+.sod_select,
+.sod_select *
+    {
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+        -webkit-user-select: none;
+           -moz-user-select: none;
+            -ms-user-select: none;
+    }
+
+/* The SoD - Please keep this first three lines intact, otherwise all hell will break looooooose */
+.sod_select
+    {
+        display: inline-block;
+        position: relative;
+        line-height: 1;
+
+        width: 200px;
+        padding: 15px 10px;
+        border: 3px solid #5e5e5e;
+        background: #ffffff;
+        color: #444444;
+        font-size: 11px;
+        font-weight: 700;
+        text-align: left;
+        text-transform: uppercase;
+        outline: 0;
+        outline-offset: -2px; /* Opera */
+        cursor: default;
+    }
+
+    /* Up/Down arrows */
+    .sod_select:before,
+    .sod_select:after
+        {
+            content: "\25B2";
+            position: absolute;
+            right: 10px;
+            top: 12px;
+            font-size: 7px;
+        }
+
+        /* Down arrow */
+        .sod_select:after
+            {
+                content: "\25BC";
+                top: auto;
+                bottom: 12px;
+            }
+
+    /* Change the border color on hover, focus and when open */
+    .sod_select:hover,
+    .sod_select.open,
+    .sod_select.focus { border-color: #000000; }
+
+        .sod_select.open { color: #919191; }
+        .sod_select.focus { box-shadow: 0 0 5px rgba(0,0,0,.2); }
+
+    /* When the entire SoD is disabled, go crazy! */
+    .sod_select.disabled
+        {
+            border-color: #828282;
+            color: #b2b2b2;
+            cursor: not-allowed;
+        }
+
+    /* The "label", or whatever we should call it. Keep the first three lines for truncating. */
+    .sod_select .sod_label
+        {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+
+            padding-right: 15px;
+        }
+
+        .sod_select .sod_prefix { /* Use this if you're using a prefix and want to style it */ }
+        .sod_select .sod_placeholder { /* Use this if you're using a placeholder and want to style it */ }
+
+
+
+    /* Options list wrapper */
+    .sod_select .sod_list
+        {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            display: none;
+            height: auto;
+            width: 200px;
+            margin: 0 0 0 -3px;
+            background: #ffffff;
+            border: 3px solid #000000;
+            border-top: none;
+            color: #444444;
+            font-weight: 300;
+            z-index: 1;
+        }
+
+        /* Shows the option list (don't edit) */
+        .sod_select.open .sod_list { display: block;  }
+
+        /* Don't display the options when  */
+        .sod_select.disabled.open .sod_list { display: none;  }
+
+        /* When the option list is displayed above the SoD */
+        .sod_select.above .sod_list
+            {
+                top: auto;
+                bottom: 100%;
+                border-top: 3px solid #000000;
+                border-bottom: none;
+            }
+
+    /* Options list container */
+    .sod_select .sod_list ul
+        {
+            overflow-y: auto;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* All the options. Keep the first three lines for truncating... */
+        .sod_select .sod_list li
+            {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+
+                position: relative;
+                padding: 10px 10px;
+                list-style-type: none;
+            }
+
+            /* Optgroups */
+            .sod_select .sod_list .optgroup,
+            .sod_select .sod_list .optgroup.disabled
+                {
+                    background: inherit;
+                    color: #939393;
+                    font-size: 10px;
+                    font-style: italic;
+                }
+
+                /* Children of an optgroup */
+                .sod_select .sod_list .groupchild { padding-left: 20px; }
+
+            /* Disabled option */
+            .sod_select .sod_list .disabled
+                {
+                    background: inherit;
+                    color: #cccccc;
+                }
+
+            /* Hover state for options, also used when a user uses his/hers up/down keys */
+            .sod_select .sod_list .active
+                {
+                    background: #f7f7f7;
+                    color: #333333;
+                }
+
+            /*Make room for the check mark */
+            .sod_select .sod_list .selected
+                {
+                    font-weight: 700;
+                    padding-right: 25px;
+                }
+
+                /* Displays a check mark for the selected option */
+                .sod_select .sod_list .selected:before
+                    {
+                        content: "";
+                        position: absolute;
+                        right: 10px;
+                        top: 50%;
+                        -webkit-transform: translateY(-50%);
+                            -ms-transform: translateY(-50%);
+                                transform: translateY(-50%);
+                        display: inline-block;
+                        color: #808080;
+                        height: 9px;
+                        width: 10px;
+                        background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMTAgOSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTAgOSIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8cGF0aCBmaWxsPSIjRDlEOUQ4IiBkPSJNNCw2LjdDMy42LDYuMywzLjUsNi4xLDMuMSw1LjdDMi42LDUuMiwyLDQuNiwxLjUsNC4xYy0wLjgtMC44LTIsMC40LTEuMiwxLjJjMC45LDAuOSwxLjksMS45LDIuOCwyLjgNCgkJYzAuNywwLjcsMS4zLDEsMiwwQzYuNyw2LDguMywzLjcsOS44LDEuNUMxMC41LDAuNSw5LTAuMyw4LjMsMC42bDAsMEM2LjcsMi45LDUuNyw0LjQsNCw2LjciLz4NCjwvZz4NCjwvc3ZnPg0K);
+                    }
+
+                /* Add a .no_highlight class to you SoD to hide the check mark and don't bold the option */
+                .sod_select.no_highlight .sod_list .selected { font-weight: 300; }
+                .sod_select.no_highlight .sod_list .selected:before { display: none; }
+
+            .sod_select .sod_list .link { /* If data-link is set on a specific option */ }
+            .sod_select .sod_list .linkexternal { /* If data-link-external is set on a specific option */ }
+
+
+
+    /* Hide native select */
+    .sod_select select { display: none !important; }
+
+        /* The native select in touch mode. Keep this first line. Sorry, keep everything. */
+        .sod_select.touch select
+            {
+                -webkit-appearance: menulist-button;
+
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: block !important;
+                height: 100%;
+                width: 100%;
+                opacity: 0;
+                z-index: 1;
+            }
+
