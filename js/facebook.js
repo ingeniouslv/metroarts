@@ -5,7 +5,7 @@ $(function() {
 	
 	function fbEvents() {
 		$.ajaxSetup({ cache: true });
-		$.getJSON('https://graph.facebook.com/TheCosmopolitan/events?access_token=1483434665268789|dtLFLwrrZgovqVkM2tdbvoYmCmE')
+		$.getJSON('https://graph.facebook.com/MACofSouthernNevada/events?access_token=1483434665268789|dtLFLwrrZgovqVkM2tdbvoYmCmE')
 		.done(function(data) {
 			var events = [];
 			

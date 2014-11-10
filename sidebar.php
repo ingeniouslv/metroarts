@@ -8,7 +8,7 @@
 		<h2>Get to Know Us</h2>
 		<ul>
 			<li><a href="<?php bloginfo('url'); ?>/our-mission">Our Mission</a></li>
-			<li><a href="<?php bloginfo('url'); ?>/news">News</a></li>
+			<li><a href="#">News</a></li>
 			<li><a href="<?php bloginfo('url'); ?>/resources">Resources</a></li>
 			<li><a href="#">Community &amp; Background</a></li>
 		</ul>
@@ -17,7 +17,7 @@
 		<ul>
 			<li><a href="#">Calendar</a></li>
 			<li><a href="<?php bloginfo('url'); ?>/membership">Membership</a></li>
-			<li><a href="<?php bloginfo('url'); ?>/fundraising">Fundraising</a></li>
+			<li><a href="#">Fundraising</a></li>
 		</ul>
 		
 		<h2>Connect</h2>
