@@ -2,7 +2,15 @@
 <html lang="en" class="no-js">
 <head>
 	<!-- Document settings and metadata. -->
-	<title><?php the_title(); ?> | Metro Arts Council of Southern Nevada</title>
+	<title>
+	<?php 
+		if ( !is_front_page() ):
+			wp_title( '|', true, 'right' ); 
+		endif;
+		
+		bloginfo('name'); 
+	?>
+	</title>
 	<meta charset="utf-8" />
 	
 	<!-- iOS, Android and Windows stuff. -->
@@ -54,9 +62,24 @@
     		<div class="row">
           	
           	<div class="col-xs-4 social">
-	          	<a href="https://www.facebook.com/MACofSouthernNevada" target="_blank"><i class="fa fa-facebook"></i></a>
-	          	<a href="https://twitter.com/macofsn" target="_blank"><i class="fa fa-twitter"></i></a>
-	          	<a href="https://instagram.com/macofsn" target="_blank"><i class="fa fa-instagram"></i></a>
+	          	<a href="https://www.facebook.com/MACofSouthernNevada" target="_blank">
+					<span class="fa-stack">
+						<i class="fa fa-circle fa-stack-2x"></i>
+						<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+	          	<a href="https://twitter.com/macofsn" target="_blank">
+					<span class="fa-stack">
+						<i class="fa fa-circle fa-stack-2x"></i>
+						<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+	          	<a href="https://instagram.com/macofsn" target="_blank">
+					<span class="fa-stack">
+						<i class="fa fa-circle fa-stack-2x"></i>
+						<i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
           	</div>
           	
           	<div class="col-xs-4 text-center">

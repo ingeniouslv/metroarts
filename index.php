@@ -9,7 +9,7 @@
 			<div class="col-lg-3 col-md-2 hidden-sm hidden-xs"> </div>
 			
 			<div class="col-lg-3 col-md-4 col-sm-6 text-center hidden-xs">
-				<img src="<?php bloginfo('template_directory'); ?>/img/mac-logo.png" class="img-responsive mac-logo" style="height:100px;" height="100" />
+				<img src="<?php bloginfo('template_directory'); ?>/img/mac-logo.png" class="img-responsive mac-logo" style="width: 200px;max-width: 100%;height: auto;" height="100" />
 			</div>
 			
 		</div>
