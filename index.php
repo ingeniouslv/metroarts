@@ -1,41 +1,42 @@
 <?php get_header(); ?>
-
-<?php if ( has_post_thumbnail() ): ?>
-  <div class="row page-heading background" style="background-image:url(../img/mac-our-mission.jpg); background-size:cover;">
-	  <div class="col-xs-12">
-		  <h1 class="page-title text-center"><span><?php the_title(); ?></span></h1>
-	  </div>
-  </div>
-<?php endif; ?> 
-  
-  <div class="container">
-  
-	  <section class="row">
 	  
-	  	<blockquote>
-	  	  <p>Mission Statement:</p>
-		  <p><strong>To provide a regional approach dedicated to promoting, expanding and facilitating the arts in Southern Nevada.</strong></p>
-		  </blockquote>
-		  
-		  <div class="wrap">
-		  	<h3>Vision Statement:</h3>
-		  	<p>As a non-profit, coordinating body, Metro Arts Council's vision is to encourage and further the development of the arts, to build a stronger cultural community.</p>
-		  	<p>As an umbrella organization, Metro Arts Council serves as:</p>
-		  </div>
-		  
-		<ul class="bullets">
-			<li>An information source</li>
-			<li>A coordinator of fiscal sponsorship</li>
-			<li>A facilitator of networking and training</li>
-			<li>An advocate for a more collaborative arts culture</li>
-		</ul>
+	<div class="container posts">
+		<div class="row page-heading">
+			<div class="col-sm-6 col-xs-12">
+				<h1><span>News</span></h1>
+			</div>
+			
+			<div class="col-lg-3 col-md-2 hidden-sm hidden-xs"> </div>
+			
+			<div class="col-lg-3 col-md-4 col-sm-6 text-center hidden-xs">
+				<img src="<?php bloginfo('template_directory'); ?>/img/mac-logo.png" class="img-responsive mac-logo" style="height:100px;" height="100" />
+			</div>
+			
+		</div>
+	
+	<?php if( have_posts() ): while( have_posts() ): the_post(); ?>
+	
+	<section class="row post">
+	
+		<?php if ( has_post_thumbnail() ): ?>
+		<div class="col-xs-4 post-thumbnail">
+			<a href="<?php the_permalink(); ?>">
+				<?php the_post_thumbnail( 'medium', array('class'=>'img-responsive') ); ?>
+			</a>
+		</div>
+		<?php endif; ?> 
 		
-		<div class="wrap">
-			<h3>HISTORY:</h3>
-			<?php the_content(); ?>
+		<div class="post-summary col-xs-8">
+			<h3 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+			<p class="date small muted"><?php the_time('F j, Y'); ?> <em>at</em> <?php the_time('g:i a'); ?></p>
+			<?php the_excerpt(); ?>
+			<a href="<?php the_permalink(); ?>" class="btn btn-info btn-readmore">Read More</a>
 		</div>
 		  		  
-	  </section>
-  </div>
+	</section>
+	
+	<?php endwhile; endif; ?> 
+	  
+	</div>
 
 <?php get_footer(); ?>
