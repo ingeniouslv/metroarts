@@ -11,4 +11,5 @@ endif;
 add_action( 'after_setup_theme', 'mac_setup' );
 
 include_once( 'inc/acf/acf.php' );
-include_once( 'inc/acf/acf-add-ons/acf-repeater/acf-repeater.php' );
+	include_once('inc/acf-add-ons/acf-gallery/gallery.php');
+	include_once('inc/acf-add-ons/acf-repeater/repeater.php');
