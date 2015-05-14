@@ -1,31 +1,31 @@
-<?php
+<?php 
 /*
- * Template Name: Donate Page
+ * Template Name: Membership Page
  * Description: Page template for the membership page.
  */
-	get_header();
+	get_header(); 	
 	$thumb_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
 ?>
 
   <div class="content background" style="background-image:url('<?php echo $thumb_url; ?>'); background-size:cover;">
 	  <div class="container">
 		 <div class="row">
-
+		 
 		 <?php if( have_posts() ): while( have_posts() ): the_post();  ?>
 			 <div class="col-sm-5 col-xs-12 copy">
 			 	 <h1><span><?php the_title(); ?></span></h1>
-
+			 	 
 				 <h3 class="h3 responsive_headline">
 					 <?php echo get_the_content(); ?>
 				 </h3>
-
+				 
 			 </div>
 		 <?php endwhile; endif; ?>
-
+			 
 			 <div class="col-sm-7 col-xs-12">
 
 				<!-- Begin MailChimp Signup Form -->
-
+				
 				<link href="http://cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
 				<style type="text/css">
 					#mc_embed_signup{background:transparent; clear:left; font:12px 'Open Sans Condensed',Helvetica,Arial,sans-serif; }
@@ -34,9 +34,9 @@
 					#mc_embed_signup .mc-field-group { padding-bottom: 2%; }
 					#mc_embed_signup .mc-field-group input { font-size: 16px; letter-spacing: 1px; font-weight: 800; }
 				</style>
-
+				
 				<div id="mc_embed_signup">
-				<form action="//metroartsnevada.us9.list-manage.com/subscribe/post?u=931de49ba23ccec13c77e3e78&amp;id=c8628bb4f9" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form" target="_blank" novalidate>
+				<form action="//metroartsnevada.us9.list-manage.com/subscribe/post?u=931de49ba23ccec13c77e3e78&amp;id=c8628bb4f9" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 				    <div id="mc_embed_signup_scroll">
 				<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
 				<div class="mc-field-group">
@@ -47,7 +47,7 @@
 					<option value="Individual">Individual</option>
 				<option value="Cultural Organization">Cultural Organization</option>
 				<option value="Corprate">Corprate</option>
-
+				
 					</select>
 				</div>
 				<div class="mc-field-group">
@@ -70,7 +70,7 @@
 					</div>
 					<div class="mc-field-group">
 					    <label for="mce-MMERGE4-addr2">Address Line 2</label>
-						<input type="text" value="" maxlength="70" name="MMERGE4[addr2]" id="mce-MMERGE4-addr2">
+						<input type="text" value="" maxlength="70" name="MMERGE4[addr2]" id="mce-MMERGE4-addr2">		
 					</div>
 					<div class="mc-field-group size1of2">
 					    <label for="mce-MMERGE4-city">City</label>
@@ -107,12 +107,12 @@
 				</form>
 				</div>
 				<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[3]='MMERGE3';ftypes[3]='dropdown';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[0]='EMAIL';ftypes[0]='email';fnames[4]='MMERGE4';ftypes[4]='address';fnames[5]='MMERGE5';ftypes[5]='phone';fnames[6]='MMERGE6';ftypes[6]='url';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-
+				
 				<!--End mc_embed_signup-->
-
+				 
 			 </div>
 		 </div>
 	  </div>
-  </div>
+  </div>	
 
 <?php get_footer(); ?>
