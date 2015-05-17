@@ -17,7 +17,7 @@
 		<ul>
 			<li><a href="#">Calendar</a></li>
 			<li><a href="<?php bloginfo('url'); ?>/Donate">Donate</a></li>
-			<li><a href="#">Get Involved</a></li>
+			<li><a href="<?php bloginfo('url'); ?>/membership">Get Involved</a></li>
 		</ul>
 
 		<h2>Connect</h2>

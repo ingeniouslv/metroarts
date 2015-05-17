@@ -46,7 +46,7 @@
 					<option value=""></option>
 					<option value="Individual">Individual</option>
 				<option value="Cultural Organization">Cultural Organization</option>
-				<option value="Corprate">Corprate</option>
+				<option value="Corprate">Corporate</option>
 				
 					</select>
 				</div>
